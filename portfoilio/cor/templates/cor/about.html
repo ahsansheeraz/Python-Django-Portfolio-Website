@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}About{% endblock %}
+
+{% block content %}
+<section class="py-5">
+    <div class="container">
+        <h1 class="text-center mb-4">About Me</h1>
+        <div class="row align-items-center">
+            <div class="col-md-4 text-center">
+                <img src="{% static 'images/profile.png' %}" class="img-fluid rounded-circle about-img" alt="Ahsan Sheeraz">
+
+                <!-- <img src="{% static 'images/hero-bg.jpg' %}" class="img-fluid rounded-circle" alt="Ahsan Sheeraz">
+            --></div>
+            <div class="col-md-8">
+                <p>Hi! I am Ahsan Sheeraz, a passionate Django Developer and Data Analyst from Pakistan.</p>
+                <h4>Skills</h4>
+                <ul>
+                    <li>Django, Python</li>
+                    
+                    <li>SQL, Data Analysis</li>
+                    <li>Data Visualization, Power BI</li>
+                </ul>
+                <h4>Education</h4>
+                <ul>
+                    <li>BS Computer Science, UOS</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

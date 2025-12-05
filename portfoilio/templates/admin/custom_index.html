@@ -1,0 +1,76 @@
+{% extends "admin/index.html" %}
+{% load i18n %}
+
+{% block content %}
+<div class="container-fluid">
+
+    <div class="row">
+
+        <!-- Total Projects -->
+        <div class="col-md-3">
+            <div class="card text-bg-primary mb-3 shadow">
+                <div class="card-body text-center">
+                    <h3>{{ total_projects }}</h3>
+                    <p class="mb-0">Total Projects</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Total Messages -->
+        <div class="col-md-3">
+            <div class="card text-bg-success mb-3 shadow">
+                <div class="card-body text-center">
+                    <h3>{{ total_messages }}</h3>
+                    <p class="mb-0">Contact Messages</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Latest Projects -->
+        <div class="col-md-6">
+            <div class="card mb-3 shadow">
+                <div class="card-header fw-bold">
+                    Latest Projects
+                </div>
+                <ul class="list-group list-group-flush">
+                    {% for project in latest_projects %}
+                    <li class="list-group-item">
+                        {{ project.title }} — <small>{{ project.created_at|date:"M d, Y" }}</small>
+                    </li>
+                    {% empty %}
+                    <li class="list-group-item">No projects available.</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <!-- Latest Contact Messages -->
+        <div class="col-md-12">
+            <div class="card mb-3 shadow">
+                <div class="card-header fw-bold">
+                    Latest Contact Messages
+                </div>
+                <ul class="list-group list-group-flush">
+                    {% for message in latest_messages %}
+                    <li class="list-group-item">
+                        <strong>{{ message.name }}</strong> — {{ message.email }}
+                        <span class="float-end">{{ message.created_at|date:"M d, Y" }}</span>
+                        <div>{{ message.message|truncatewords:15 }}</div>
+                    </li>
+                    {% empty %}
+                    <li class="list-group-item">No messages found.</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+{{ block.super }}
+{% endblock %}

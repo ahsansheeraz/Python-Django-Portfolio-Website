@@ -1,0 +1,57 @@
+ 
+
+.hero {
+    min-height: 80vh; /* reduce slightly for card layout */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.hero .card {
+    border-radius: 15px;
+    padding: 2rem;
+}
+
+/* Hero Buttons */
+.hero .btn-primary {
+    background-color: #0d6efd;
+    border: none;
+    transition: 0.3s;
+}
+.hero .btn-primary:hover {
+    background-color: #0b5ed7;
+}
+
+/* Card hover effect */
+.card:hover {
+    transform: translateY(-5px);
+    transition: 0.3s;
+}
+
+/* Footer hover icons */
+footer a:hover {
+    color: #0d6efd;
+}
+
+/* Skills icons */
+.fa-3x {
+    color: #0d6efd;
+    margin-bottom: 10px;
+}
+
+/* Section headings */
+section h2 {
+    font-weight: 700;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Cards spacing */
+.card {
+    border-radius: 8px;
+}
+.about img {
+    width: 200px; /* adjust size */
+    height: 200px;
+    object-fit: cover; /* crops without stretching */
+    border: 4px solid #007bff; /* optional border */
+}

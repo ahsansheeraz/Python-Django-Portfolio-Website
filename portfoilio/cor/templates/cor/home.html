@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero py-5">
+    <div class="container">
+        <div class="card shadow-lg border-0 p-4" style="background-color: #f8f9fa; border-radius: 15px;">
+            <div class="row align-items-center">
+
+                <!-- Left Side: Text -->
+                <div class="col-md-6 text-start">
+                    <h1 class="display-4 fw-bold" style="color: #0d6efd;">Hello, I'm Ahsan Sheeraz</h1>
+                    <p class="lead text-muted mb-4">Django Developer & Data Analyst</p>
+                    <a href="/projects/" class="btn btn-primary btn-lg">View My Work</a>
+                </div>
+
+                <!-- Right Side: Circular Image -->
+                <div class="col-md-6 text-center">
+                    <img src="{% static 'images/profile.png' %}" 
+                         alt="Ahsan Sheeraz" 
+                         class="img-fluid rounded-circle shadow"
+                         style="max-width: 250px; border: 5px solid #0d6efd;">
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- About Preview -->
+<section class="py-5" style="margin-top: 10px;">
+    <div class="container text-center">
+        <h2 class="display-4 fw-bold mb-4" style="color: #0d6efd;">About Me</h2>
+        <p class="lead mb-4" style="font-size: 1.25rem; line-height: 1.8;">
+            I am a BS Computer Science graduate with experience in Django, Python, and Data Analysis.
+            I build professional web applications and love learning new technologies.
+        </p>
+        <a href="/about/" class="btn btn-secondary btn-lg mt-3">Read More</a>
+    </div>
+</section>
+
+
+<!-- Skills -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <h2 class="display-4 fw-bold mb-4" style="color: #0d6efd;">Skills</h2>
+        <div class="row text-center">
+            <div class="col-md-3"><i class="fab fa-python fa-3x mb-2"></i><h5>Python</h5></div>
+            <div class="col-md-3"><i class="fab fa-django fa-3x mb-2"></i><h5>Django</h5></div>
+            
+
+            <div class="col-md-3 text-center">
+    <i class="fas fa-chart-line fa-3x mb-2"></i>
+    <h5>Power BI</h5>
+</div>
+
+            <div class="col-md-3"><i class="fas fa-database fa-3x mb-2"></i><h5>SQL</h5></div>
+        </div>
+    </div>
+</section>
+
+<!-- Portfolio Preview -->
+ <!-- View All Projects Button -->
+<div class="text-center mt-4">
+    <a href="{% url 'projects:project_list' %}" class="btn btn-outline-primary btn-lg">
+        View All Projects
+    </a>
+</div>
+{% endblock %}
